@@ -26,8 +26,8 @@ def encrypt(text):
 
     for letter in text:
         
-        if text != ' ':
-            cipher += morse_code_dict[letter]
+        if letter != ' ':
+            cipher += morse_code_dict[letter] + ' '
         
         else:
             cipher += ' '
@@ -94,3 +94,6 @@ def main():
             break
 
 
+
+if __name__ == '__main__':
+    main()
