@@ -78,20 +78,24 @@ def main():
     
     while True:
         choice = input("\nEnter command: ")
+        
+        try:
+            if choice.lower() == 'e':
+                text = input("Enter text to Encrypt:\n")
 
-        if choice.lower() == 'e':
-            text = input("Enter text to Encrypt:\n")
+                result = encrypt(text.upper())
+                print(f"Encrypted text:\n{result}")
+            elif choice.lower() == 'd':
+                text = input("Enter text to Decrypt:\n")
 
-            result = encrypt(text.upper())
-            print(f"Encrypted text:\n{result}")
-        elif choice.lower() == 'd':
-            text = input("Enter text to Decrypt:\n")
-
-            result = decrypt(text)
-            print(f"Decrypted text:\n{result}")
-        else:
-            print("Bye!")
-            break
+                result = decrypt(text)
+                print(f"Decrypted text:\n{result}")
+            else:
+                print("Bye!")
+                break
+        except:
+            print("\nError Occured!")
+            print("Review your text carefully.")
 
 
 
