@@ -40,12 +40,12 @@ def decrypt(text):
     
     text += ' '
     decrypt_cipher = ''
-    citext = ''
+    temp_text = ''
 
     for letter in text:
         if letter != ' ':
             counter = 0
-            citext += letter
+            temp_text += letter
 
         else:
             # if counter = 1
@@ -56,8 +56,8 @@ def decrypt(text):
                 decrypt_cipher += ' '
             else:
                 # reversing the encryption
-                decrypt_cipher += list(morse_code_dict.keys())[list(morse_code_dict.values()).index(citext)]
-                citext = ''
+                decrypt_cipher += list(morse_code_dict.keys())[list(morse_code_dict.values()).index(temp_text)]
+                temp_text = ''
 
     return decrypt_cipher
 
